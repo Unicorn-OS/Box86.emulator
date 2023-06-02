@@ -1,4 +1,7 @@
-# Try:
+# Guide
+https://box86.org/2022/02/box86-box64-are-easy-to-use/
+
+# Discuss:
 - https://github.com/ptitSeb/box86/issues/614
 - https://pyra-handheld.com/boards/threads/box86-error-loading-libs-on-rasp-4.99633/
 
