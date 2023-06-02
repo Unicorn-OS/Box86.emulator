@@ -1,0 +1,22 @@
+---
+# https://github.com/ptitSeb/box64/blob/main/docs/COMPILE.md
+
+- name: Get sources.list
+  ansible.builtin.get_url:
+    url: https://ryanfortner.github.io/box64-debs/box64.list
+    dest: /etc/apt/sources.list.d/box64.list
+  become: true
+
+- name: Add an Apt signing key
+  ansible.builtin.apt_key:
+    id: 7759FA1D9FECAC9E
+    url: https://ryanfortner.github.io/box64-debs/KEY.gpg
+    keyring: /etc/apt/trusted.gpg.d/box64-debs-archive-keyring.gpg
+  become: true
+
+- name: Install Box64
+  ansible.builtin.apt:
+    pkg:
+    - box64
+  become: true
+  notify: restart systemd-binfmt

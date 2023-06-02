@@ -1,0 +1,7 @@
+---
+
+- name: restart systemd-binfmt
+  ansible.builtin.systemd:
+    state: restarted
+    daemon_reload: true
+    name: systemd-binfmt
