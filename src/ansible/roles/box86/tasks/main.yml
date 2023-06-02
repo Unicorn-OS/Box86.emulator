@@ -6,10 +6,10 @@
     creates: /etc/armhf-dpkg.log
   become: true
 
-- name: Run "apt-get update"
-  ansible.builtin.apt:
-    update_cache: yes
-  become: true
+# - name: Run "apt-get update"
+#   ansible.builtin.apt:
+#     update_cache: yes
+#   become: true
 
 # https://github.com/ptitSeb/box86/blob/master/docs/COMPILE.md
 - name: Get sources.list
